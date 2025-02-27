@@ -20,3 +20,49 @@ docker exec -it my-ubuntu-container bash
 
 
 
+
+
+
+
+apt update
+apt install -y xfce4 xfce4-goodies tightvncserver novnc websockify
+
+
+
+
+
+
+
+
+
+
+
+export USER=root
+
+
+
+
+
+vncserver :1
+
+
+
+websockify --web /usr/share/novnc/ 6080 localhost:5901 &
+
+
+
+
+
+
+http://localhost:6080/vnc.html
+
+
+
+
+
+
+
+
+
+
+
