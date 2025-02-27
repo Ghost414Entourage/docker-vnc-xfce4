@@ -127,6 +127,26 @@ websockify --web /usr/share/novnc/ 6080 localhost:5901 &
 
 
 
+echo $DISPLAY
+
+
+export DISPLAY=:1
+
+
+
+export USER=root
+
+
+echo $USER
+
+
+
+vncserver -list
+
+
+
+cat ~/.vnc/$(hostname):1.log
+
 
 
 
