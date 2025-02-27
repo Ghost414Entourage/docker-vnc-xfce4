@@ -1,0 +1,13 @@
+docker pull ubuntu:latest
+
+
+docker run -it -p 6080:6080 -p 5900:5900 --name my-ubuntu-container ubuntu:latest bash -c "apt update && apt install -y xfce4 xfce4-goodies tightvncserver novnc websockify && vncserver :1 && websockify --web /usr/share/novnc/ 6080 localhost:5901"
+
+
+
+docker run -it -p 6080:6080 -p 5900:5900 --name my-ubuntu-container ubuntu:latest bash -c "apt update && apt install -y xfce4 xfce4-goodies tightvncserver novnc websockify && vncserver :1 && websockify --web /usr/share/novnc/ 6080 localhost:5901 & tail -f /dev/null"
+
+
+
+
+
