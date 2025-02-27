@@ -60,6 +60,77 @@ http://localhost:6080/vnc.html
 
 
 
+apt-get update
+apt-get install xfce4 tigervnc-standalone-server novnc websockify nginx
+
+
+
+
+mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
+
+
+
+
+
+
+
+
+
+
+
+
+nano ~/.vnc/xstartup
+
+
+
+
+
+
+#!/bin/bash
+
+# Make sure that the SESSION_MANAGER environment variable is not set.
+unset SESSION_MANAGER
+# Launch Xfce in the foreground.
+startxfce4 &
+
+
+
+
+
+
+#!/bin/sh
+xrdb $HOME/.Xresources
+startxfce4 &
+
+
+
+
+
+chmod +x ~/.vnc/xstartup
+
+
+vncserver -kill :1
+
+
+
+
+vncserver :1
+
+
+
+
+websockify --web /usr/share/novnc/ 6080 localhost:5901 &
+
+
+
+
+
+
+
+
+
+
+
 
 
 
