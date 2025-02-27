@@ -11,3 +11,12 @@ docker run -it -p 6080:6080 -p 5900:5900 --name my-ubuntu-container ubuntu:lates
 
 
 
+docker start my-ubuntu-container
+
+
+
+
+docker exec -it my-ubuntu-container bash
+
+
+
